@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Topla() {
+            var sayi1 = Number(document.getElementById("sayi1").value);
+            var sayi2 = Number(document.getElementById("sayi2").value);
+
+            //alert(sayi1)
+            //alert(sayi2)
+
+            //console.log("Sayi 1 => " + sayi1)
+            //console.log("Sayi 2 => " + sayi2) 
+
+            document.getElementById("sonuc").innerHTML = "Sonuç: " + (sayi1 + sayi2)
+        }
+      
+       
+    </script>
+    <!--
+        HEAD etiketi arasına yazılan scriptler öncelikle HTML kodlarına ihtiyacınız olmayan durumlarda kullanılır. Önce bu script'ler yüklenir sonra HTML kodları yüklenir. Lakin HTML kodlarına ihtiyacımız olan durumlarda body etiketinin en sonuna yazarız. 
+    -->
+    
+</head>
+<body>
+    <h1>Hesap Makinesi</h1>
+
+    <label for="">1. Sayı: </label>
+    <input type="text" id="sayi1">
+    <br>
+    <br>
+    <label for="">2. Sayı: </label>
+    <input type="text" id="sayi2">
+    <br><br>
+    <input type="button" onclick="Topla()" value="Topla" id="btnTopla">
+    <input type="button" value="Çıkar" id="btnCikar">
+    <input type="button" value="Çarp" id="btnCarp">
+    <input type="button" value="Böl" id="btnBol">
+
+    <br><br>
+
+    <div id="sonuc"></div>
+    <script>
+        var btnCikar = document.getElementById("btnCikar");
+        btnCikar.onclick = function()  {
+            var sayi1 = Number(document.getElementById("sayi1").value);
+            var sayi2 = Number(document.getElementById("sayi2").value);
+
+            document.getElementById("sonuc").innerHTML = "Sonuç: " + (sayi1 - sayi2)
+
+        }
+
+        var btnCarp = document.getElementById("btnCarp")
+        btnCarp.onclick = function() {
+            var sayi1 = Number(document.getElementById("sayi1").value);
+            var sayi2 = Number(document.getElementById("sayi2").value);
+
+            document.getElementById("sonuc").innerHTML = "Sonuç: " + (sayi1 * sayi2)
+
+        }
+
+        var btnBol = document.getElementById("btnBol")
+        btnBol.addEventListener("click", function() {
+        var sayi1 = Number(document.getElementById("sayi1").value);
+        var sayi2 = Number(document.getElementById("sayi2").value);
+
+        document.getElementById("sonuc").innerHTML = "Sonuç: " + (sayi1 / sayi2)
+       })
+
+    </script>
+</body>
+</html>
