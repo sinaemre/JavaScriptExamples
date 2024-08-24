@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hipotenüs Hesaplama</h1>
+
+    <label for="">1. Kenar</label>
+    <input type="number" id="kenar1">
+    <br><br>
+    <label for="">2. Kenar</label>
+    <input type="number" id="kenar2">
+    <button id="hesapla">Hesapla</button>
+    <br><br>
+
+    <label for="">Hipotenüs: </label>
+    <label for="" id="hipotenus"></label> 
+
+    <script>
+        var hesapla = document.getElementById("hesapla");
+        hesapla.onclick = function() {
+            //Math.sqrt() => Kök almak için kullanılır.
+            //Math.pow(2,4) => 2'nin 4. kuvveti
+
+            var kenar1 = document.getElementById("kenar1").value;
+            var kenar2 = document.getElementById("kenar2").value;
+
+            var kare1 = Math.pow(kenar1, 2);
+            var kare2 = Math.pow(kenar2, 2);
+
+            var toplam = kare1 + kare2;
+
+            var sonuc = Math.sqrt(toplam);
+
+            document.getElementById("hipotenus").innerHTML = sonuc;
+        }
+    </script>
+</body>
+</html>

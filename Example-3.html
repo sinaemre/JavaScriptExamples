@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alan ve Çevre Hesaplama</h1>
+
+    <label for="">1. Kenar</label>
+    <input type="number" id="kenar1">
+    <br><br>
+    <label for="">2. Kenar</label>
+    <input type="number" id="kenar2">
+    <button id="hesapla">Hesapla</button>
+    <br><br>
+
+    <label for="">Alan: </label>
+    <label for="" id="alan"></label> 
+    <br><br>
+    <label for="">Çevre: </label>
+    <label for="" id="cevre"></label> 
+
+    <script>
+        var hesaplaBtn = document.getElementById("hesapla");
+        hesaplaBtn.onclick = function() {
+            var kenar1 = Number(document.getElementById("kenar1").value)
+            var kenar2 = Number(document.getElementById("kenar2").value);
+
+            var alan = kenar1 * kenar2;
+            var cevre = 2 * (kenar1 + kenar2);
+
+            document.getElementById("alan").innerHTML = alan;
+            document.getElementById("cevre").innerHTML = cevre;
+        }
+    </script>
+</body>
+</html>

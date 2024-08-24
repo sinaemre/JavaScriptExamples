@@ -6,6 +6,44 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Not Ortalaması</h1>
+
+    <label for="">Vize: </label>
+    <input type="number" id="vize">
+    <br><br>
+    <label for="">Final: </label>
+    <input type="number" id="final">
+
+    <button id="hesapla">Hesapla</button>
+    <br><br>
+    <label for="">Ortalama: </label>
+    <label for="" id="ortalama">65</label>
+    <br><br>
     
+    <label for="">Durum: </label>
+    <label for="" id="sonuc"></label>
+
+    <script>
+        var hesapla = document.getElementById("hesapla");
+        hesapla.onclick = function() {
+            var vize = document.getElementById("vize").value;
+            var final = document.getElementById("final").value;
+
+            var ortalama = (vize * 0.4) + (final * 0.6);
+
+            document.getElementById("ortalama").innerHTML = ortalama;
+
+            var sonuc = "";
+
+            if (ortalama >= 50 && final >= 50) {
+                sonuc = "GEÇTİNİZ!"
+            } else if (ortalama >= 50 && final < 50) {
+                sonuc = "Final notu 50'den küçük. KALDINIZ!"
+            } else {
+                sonuc = "KALDINIZ!"
+            }
+            document.getElementById("sonuc").innerHTML = sonuc;
+        }
+    </script>
 </body>
 </html>
